@@ -1,0 +1,84 @@
+@startuml
+
+title __HW7's Class Diagram__\n
+
+  namespace hw7 {
+    class hw7.CampusBuildingViewer {
+        + display()
+    }
+  }
+  
+
+  namespace hw7 {
+    class hw7.CampusCommandViewer {
+        + display()
+    }
+  }
+  
+
+  namespace hw7 {
+    class hw7.CampusModel {
+        - Idnames : Map<String, String>
+        - directions : Map<String, String>
+        - g : Graph<String, Double>
+        - idNodes : Map<String, String>
+        - intersections : Set<String>
+        - nodesLoc : Map<String, Entry<Integer, Integer>>
+        + IsNodes()
+        + ToID()
+        + allIds()
+        + createNewModel()
+        + findPath()
+        + getDirect()
+        + getName()
+        + isIntersection()
+        - getDirection()
+    }
+  }
+  
+
+  namespace hw7 {
+    class hw7.CampusParser {
+        {static} + readEdges()
+        {static} + readNodes()
+    }
+  }
+  
+
+  namespace hw7 {
+    class hw7.CampusPathViewer {
+        - end : String
+        - start : String
+        + CampusPathViewer()
+        + display()
+    }
+  }
+  
+
+  namespace hw7 {
+    class hw7.CampusPaths {
+        {static} + main()
+    }
+  }
+  
+
+  namespace hw7 {
+    interface hw7.CampusViewer {
+        {abstract} + display()
+    }
+  }
+  
+
+  namespace hw7 {
+    class hw7.ViewerFactory {
+        + getViewer()
+    }
+  }
+  
+
+  hw7.CampusBuildingViewer .up.|> hw7.CampusViewer
+  hw7.CampusCommandViewer .up.|> hw7.CampusViewer
+  hw7.CampusPathViewer .up.|> hw7.CampusViewer
+
+
+@enduml

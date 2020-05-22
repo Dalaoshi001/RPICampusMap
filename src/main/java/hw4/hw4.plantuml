@@ -1,0 +1,50 @@
+@startuml
+
+title __HW4's Class Diagram__\n
+
+  namespace hw4 {
+    class hw4.Edge {
+        + Edge()
+        + checkRep()
+        + compareTo()
+        + equals()
+        + getLabel()
+        + getNext()
+        + getRoot()
+        + hashCode()
+        + setLabel()
+    }
+  }
+  
+
+  namespace hw4 {
+    class hw4.Graph {
+        - map : Map<N, Set<Edge<N, T>>>
+        + Graph()
+        + addEdge()
+        + addNode()
+        + getChild()
+        + getEdge()
+        + getNodes()
+    }
+  }
+  
+
+  namespace hw4 {
+    class hw4.GraphWrapper {
+        - gw : Graph<String, String>
+        + GraphWrapper()
+        + addEdge()
+        + addNode()
+        + listChildren()
+        + listNodes()
+    }
+  }
+  
+
+  hw4.Edge .up.|> java.lang.Comparable
+  hw4.Edge o-- T : label
+  hw4.Edge o-- N : next
+  hw4.Edge o-- N : root
+
+@enduml

@@ -1,0 +1,98 @@
+@startuml
+
+title __MAIN's Class Diagram__\n
+
+  namespace hw4 {
+    class hw4.Edge {
+    }
+  }
+  
+
+  namespace hw4 {
+    class hw4.Graph {
+    }
+  }
+  
+
+  namespace hw4 {
+    class hw4.GraphWrapper {
+    }
+  }
+  
+
+  namespace hw5 {
+    class hw5.MarvelParser {
+    }
+  }
+  
+
+  namespace hw5 {
+    class hw5.MarvelPaths {
+    }
+  }
+  
+
+  namespace hw5 {
+    abstract class hw5.Path {
+    }
+  }
+  
+
+  namespace hw7 {
+    class hw7.CampusBuildingViewer {
+    }
+  }
+  
+
+  namespace hw7 {
+    class hw7.CampusCommandViewer {
+    }
+  }
+  
+
+  namespace hw7 {
+    class hw7.CampusModel {
+    }
+  }
+  
+
+  namespace hw7 {
+    class hw7.CampusParser {
+    }
+  }
+  
+
+  namespace hw7 {
+    class hw7.CampusPathViewer {
+    }
+  }
+  
+
+  namespace hw7 {
+    class hw7.CampusPaths {
+    }
+  }
+  
+
+  namespace hw7 {
+    interface hw7.CampusViewer {
+    }
+  }
+  
+
+  namespace hw7 {
+    class hw7.ViewerFactory {
+    }
+  }
+  
+
+  hw4.Edge .up.|> java.lang.Comparable
+  hw4.Edge o-- T : label
+  hw4.Edge o-- N : next
+  hw4.Edge o-- N : root
+  hw5.MarvelPaths -up-|> hw5.Path
+  hw7.CampusBuildingViewer .up.|> hw7.CampusViewer
+  hw7.CampusCommandViewer .up.|> hw7.CampusViewer
+  hw7.CampusPathViewer .up.|> hw7.CampusViewer
+
+@enduml

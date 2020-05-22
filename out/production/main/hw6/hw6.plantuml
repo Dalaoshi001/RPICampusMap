@@ -1,0 +1,16 @@
+@startuml
+
+title __HW6's Class Diagram__\n
+
+  namespace hw6 {
+    class hw6.MarvelPaths2 {
+        + createNewGraph()
+        + findPath()
+        {static} + findPathAlgorithm()
+    }
+  }
+  
+
+  hw6.MarvelPaths2 -up-|> hw5.Path
+
+@enduml
